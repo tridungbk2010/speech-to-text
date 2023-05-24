@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import { useRef, useState } from "react";
-import { useFrame, ThreeElements } from "@react-three/fiber";
+import { ThreeElements } from "@react-three/fiber";
 import { useControls } from "leva";
 
 export default function Box(props: ThreeElements["mesh"] & { boxId: string }) {
@@ -11,7 +11,7 @@ export default function Box(props: ThreeElements["mesh"] & { boxId: string }) {
 
   const boxProps = useControls(props.boxId, {
     position: {
-      value: props.position || [0, 0, 0],
+      value: [0, 0, 0],
       step: 0.01,
       onChange: (value) => {
         console.log("changed pos", value);
